@@ -70,10 +70,10 @@ def check_cita_tie_pickup(context: config.Customer):
         logging.error("Timed out waiting for form to load")
     
     if "En este momento no hay citas disponibles." in browser.page_source:
-        browser.close()
+        browser.quit()
         return False
     else:
-        browser.close()
+        browser.quit()
         return True
 
 if __name__ == '__main__':
